@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebTech STT-NF - HTML5 Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #eef2f5;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            border: 2px solid #333;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* a. HEADER (Kuning) */
+        header {
+            background-color: #ffd700;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+
+        header .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        header svg {
+            width: 38px;
+            height: 38px;
+            fill: #000;
+        }
+
+        header h1 {
+            font-size: 24px;
+            color: #222;
+            letter-spacing: 1px;
+        }
+
+        /* b. NAV (Hijau Muda) */
+        nav {
+            background-color: #a3e635;
+            padding: 12px;
+            border-bottom: 2px solid #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        /* Pembungkus Konten Utama */
+        .main-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* c. ARTICLE (Oranye Muda) */
+        article {
+            background-color: #ffbe76;
+            flex: 2;
+            padding: 20px;
+            min-width: 280px;
+            border-right: 2px solid #333;
+        }
+
+        article h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 2px dashed #333;
+            padding-bottom: 5px;
+        }
+
+        /* Section di dalam Article */
+        section {
+            background-color: #ffdd99;
+            border: 1px solid #d4a017;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+
+        section h3 {
+            font-size: 16px;
+            color: #1a252f;
+            margin-bottom: 6px;
+        }
+
+        section p {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        /* d. ASIDE (Cyan / Biru Toska) */
+        aside {
+            background-color: #2bcbba;
+            flex: 1;
+            padding: 20px;
+            min-width: 180px;
+        }
+
+        aside h3 {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #0d3b36;
+        }
+
+        aside .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        aside .card-photo {
+            background: #fff;
+            padding: 6px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        aside img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+
+        aside .caption {
+            font-size: 11px;
+            text-align: center;
+            margin-top: 5px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* e. FOOTER (Kuning) */
+        footer {
+            background-color: #ffd700;
+            padding: 12px;
+            text-align: center;
+            border-top: 2px solid #333;
+            font-size: 13px;
+            font-weight: bold;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- a. HEADER: Logo & Nama Web -->
+        <header>
+            <div class="brand">
+                <!-- Icon Logo SVG Modern -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <h1>WebTech STT-NF</h1>
+            </div>
+        </header>
+
+        <!-- b. NAV: Berisi Menu Navigasi -->
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Praktikum UI/UX</a></li>
+                <li><a href="#">Tutorial HTML5</a></li>
+                <li><a href="#">Galeri</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+            </ul>
+        </nav>
+
+        <!-- Container Tengah (Article + Aside) -->
+        <div class="main-wrapper">
+            
+            <!-- c. ARTICLE: Berisi Konten Artikel (3 Section) -->
+            <article>
+                <h2>Eksplorasi Desain Web Modern</h2>
+
+                <section>
+                    <h3>Section 1: Struktur Semantik HTML5</h3>
+                    <p>Penggunaan elemen seperti <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, dan <code>&lt;aside&gt;</code> memudahkan mesin pencari (SEO) dan pembaca layar (accessibility) memahami struktur dokumen web secara jelas.</p>
+                </section>
+
+                <section>
+                    <h3>Section 2: Prinsip Dasar UI/UX Design</h3>
+                    <p>Antarmuka pengguna (UI) harus mengutamakan kejelasan tata letak, hirarki visual, serta konsistensi warna agar pengguna nyaman berselancar di dalam website.</p>
+                </section>
+
+                <section>
+                    <h3>Section 3: Layout Responsif dengan Flexbox</h3>
+                    <p>Dengan teknik CSS Flexbox, susunan elemen pada halaman dapat menyesuaikan ukuran layar secara otomatis, baik di komputer desktop maupun ponsel pintar.</p>
+                </section>
+            </article>
+
+            <!-- d. ASIDE: Konten Multimedia Foto -->
+            <aside>
+                <h3>Galeri Media</h3>
+                <div class="photo-gallery">
+                    <div class="card-photo">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300" alt="Coding Workspace">
+                        <div class="caption">Workspace</div>
+                    </div>
+                    <div class="card-photo">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=300" alt="UI Design">
+                        <div class="caption">UI Design</div>
+                    </div>
+                    <div class="card-photo">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=300" alt="Coding Web">
+                        <div class="caption">Frontend Dev</div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- e. FOOTER: Hak Cipta / Credit -->
+        <footer>
+            <p>&copy; 2026 STT Terpadu Nurul Fikri - Praktikum 3 Desain UI/UX Pem Web</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
